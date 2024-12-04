@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Scheduler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #7367F0;
+            --sidebar-width: 260px;
+            --sidebar-bg: #283046;
+            --content-bg: #F8F7FA;
+            --text-muted: #6E6B7B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: var(--content-bg);
+            color: #4B4B4B;
+            line-height: 1.6;
+        }
+
+        .layout-wrapper {
+            display: flex;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--sidebar-bg);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar-brand {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-menu a {
+            color: #B4B7BD;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .sidebar-menu a i {
+            margin-right: 12px;
+        }
+
+        .content-wrapper {
+            margin-left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #D8D6DE;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #5E50EE;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            border: 1px solid #E0E0E0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #F3F2F7;
+            color: #5E5873;
+        }
+
+        .table-striped tbody tr:nth-child(even) {
+            background-color: #F6F6F6;
+        }
+
+        @media (max-width: 768px) {
+            .layout-wrapper {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+
+            .content-wrapper {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-wrapper">
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                Task Scheduler
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="../Home/Home.html">Home</a></li>
+                <li><a href="../Tasks/TaskView.html">Task View</a></li>
+                <li><a href="../Tasks/TaskAdmin.html" class="active">Task Admin</a></li>
+            </ul>
+        </div>
+        <div class="content-wrapper">
+            <div class="card">
+                <h1>Welcome to Task Scheduler</h1>
+                <p>Manage your tasks efficiently with our intuitive platform</p>
+            </div>
+            <div class="card">
+                <div class="row">
+                    <div class="col">
+                        <h3>Task Management Made Easy</h3>
+                        <p>Create, track, and prioritize your tasks with our user-friendly interface</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
